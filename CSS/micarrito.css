@@ -1,0 +1,126 @@
+@charset "utf-8";
+:root {
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    --morado: #ebc3ff;
+    --morado_oscuro: #b263d1;
+    --gris: #545454;
+    --grisclaro: #DFE9F3;
+}
+body{
+    background-color: #f2f0f0;
+}
+.nav-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Añadido para centrar verticalmente */
+    padding: 1rem 3rem;
+    background-color: #505050;
+    img {
+        height: 26px;
+        margin-right: 0.5rem; /* Añadido para separar la imagen del texto */
+    }
+    a:hover {
+        transform: scale(2);
+    }
+    .entrar {
+        display: flex;
+        align-items: center; /* Añadido para centrar verticalmente */
+    }
+}
+nav {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: auto;
+    font-size: 30px;
+}
+.botones{
+    a {
+        padding-right: 20px;
+        color: white;
+        text-decoration: none;
+    }
+}
+.Compras{
+    color: #000000;
+    margin-inline-start: 70px;
+    margin-inline-end: 70px;
+    margin-block-start: 1rem;
+    margin-block-end: 2rem;
+    background-color: white;
+    
+    h1{
+        font-size: 20px;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        margin-inline-start: 30px;
+        margin-inline-end: 0px;
+        padding-top: 20px;
+    }
+    .imagenes{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        padding: 1rem 2rem;
+        gap: 1rem;
+        img{
+            height: 100px;
+            width: 300px;
+        }
+        :nth-child(1){
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        :nth-child(2){
+            grid-column-start: 2;
+            grid-column-end: 5;
+        }
+        :nth-child(3){
+            grid-column-start: 5;
+            grid-column-end: 6;
+        }
+        .cantidad{
+            display: flex;
+            gap: 1rem;
+        }
+    }
+}
+.total{
+    margin-inline-start: 70px;
+    margin-inline-end: 70px;
+    display: flex;
+    justify-content: end;
+    display: grid;
+    grid-template-columns: repeat(11,1fr);
+    padding: 1rem 4.4rem;
+    h2{    
+        color: black;
+        text-align: center;
+    }
+    :nth-child(1){
+        grid-column-start: 9;
+        grid-column-end: 10;
+    }
+    :nth-child(2){
+        grid-column-start: 10;
+        grid-column-end: 11;
+    }
+}
+.boton{
+    display: flex;
+    justify-content: center;
+    a{
+        background-color:#F14612;
+        font-size: 25px;
+        color: #000000;
+        text-decoration: none;
+        height: 60px;
+        width: 360px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+
