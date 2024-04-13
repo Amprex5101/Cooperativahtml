@@ -1,0 +1,38 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Img-Inicio {
+    background: linear-gradient(to right, transparent 65%, #ffffff 35%), no-repeat;
+    background-size: 100%,90rem;
+    height: 80%;
+    max-width: 80rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 59rem;
+
+    img {
+        max-width: 80%;
+        max-height: 80%;
+        position: absolute;
+        left: 0%;
+        top: 0;
+        
+        object-fit: contain;
+}
+
+}
+
+.texto-inicio {
+    background-color: white;
+    padding: 2rem;
+    margin-right: 2rem;
+    max-width: 30%;
+}
