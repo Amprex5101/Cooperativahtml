@@ -20,12 +20,24 @@ body{
         height: 26px;
         margin-right: 0.5rem; /* Añadido para separar la imagen del texto */
     }
-    a:hover {
-        transform: scale(2);
+    .botones{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        a:hover{
+            transform: scale(1.1);
+        }
     }
     .entrar {
         display: flex;
         align-items: center; /* Añadido para centrar verticalmente */
+        a:hover{
+            transform: scale(1.1);
+        }
+        a{
+            display: flex;
+            align-items: center;
+        }
     }
 }
 nav {
@@ -48,7 +60,7 @@ nav {
     margin-block-start: 1rem;
     margin-block-end: 2rem;
     background-color: white;
-    
+    border-radius: 6px;
     h1{
         font-size: 20px;
         margin-block-start: 0px;
@@ -56,12 +68,16 @@ nav {
         margin-inline-start: 30px;
         margin-inline-end: 0px;
         padding-top: 20px;
+        padding-bottom: 20px;
     }
     .imagenes{
         display: grid;
         grid-template-columns: repeat(5,1fr);
         padding: 1rem 2rem;
         gap: 1rem;
+        border-color: #000000;
+        border-top: 1px;
+        border-top-style: solid;
         img{
             height: 100px;
             width: 300px;
@@ -85,9 +101,9 @@ nav {
     }
 }
 .total{
-    margin-inline-start: 70px;
-    margin-inline-end: 70px;
-    display: flex;
+    border-color: #000000;
+    border-top: 1px;
+    border-top-style: solid;
     justify-content: end;
     display: grid;
     grid-template-columns: repeat(11,1fr);
@@ -108,6 +124,7 @@ nav {
 .boton{
     display: flex;
     justify-content: center;
+    padding-bottom: 30px;
     a{
         background-color:#F14612;
         font-size: 25px;
