@@ -72,10 +72,11 @@ display: flex;
 .botones{
  margin-top: 2rem;
  text-align: center;
+ justify-content: space-around;
+ display: flex;
  button {
     padding: 10px 20px; /* Ajusta el espacio interno de los botones */
     font-size: 16px; /* Cambia el tamaño de fuente */
-    margin-right: 10rem; /* Agrega un margen a la derecha para separar los botones */
     border-radius: 0.8rem;
     cursor: pointer;
     font-family: "Lato", sans-serif;
@@ -102,14 +103,13 @@ display: flex;
 
 
 .texto-abajo{
-    display: grid;
-    grid-template-columns: 3 1fr;
+    display: flex;
+    justify-content: space-around;
     margin-top: 10px;
     a{
-        margin-right: 5.9rem;
         margin-top: 4rem;
         font-size: 14px;
-        grid-column: 2/3;
+        margin-left: 0px;
     }
 }
 
