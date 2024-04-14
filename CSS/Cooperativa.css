@@ -16,19 +16,35 @@ h1,h2,h3{
     border-color:darkgrey;
     border-top-style: solid;
     border-width: 1px;
-    
+   
 }
+
 .nav-principal{
-    display: grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap: 2.5rem;
-   padding: 1rem 3rem;
-   font-size: 1.6rem;
-   background-color: rgb(71, 68, 68);
-   color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Añadido para centrar verticalmente */
+    padding: 1.9rem 3rem;
+    background-color: #505050;
+    font-size: 25px;
+    color: white;
+    img {
+        height: 26px;
+        margin-right: 0.5rem; /* Añadido para separar la imagen del texto */
+    }
+    a:hover {
+        transform: scale(1.5);
+    }
+    .entrar {
+        display: flex;
+        align-items: center; /* Añadido para centrar verticalmente */
+    }
+    nav{
+
+        text-decoration: none;
+    }
 }
 .nav-principal img{
-   height: 2rem;
+   height: 3.5rem;
    grid-column: 4/5;
 }
 .in{
