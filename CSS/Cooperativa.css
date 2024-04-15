@@ -12,6 +12,9 @@ h1,h2,h3{
     
     font-size: 3rem;
 }
+body{
+    margin: 0px;
+}
 .contenedor-navegacion{
     border-color:darkgrey;
     border-top-style: solid;
@@ -38,9 +41,9 @@ h1,h2,h3{
         display: flex;
         align-items: center; /* Añadido para centrar verticalmente */
     }
-    nav{
-
+    a{
         text-decoration: none;
+        color: white;
     }
 }
 .nav-principal img{
