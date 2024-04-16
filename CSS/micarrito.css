@@ -9,6 +9,7 @@
 }
 body{
     background-color: #f2f0f0;
+    margin: 0px;
 }
 .nav-principal {
     display: flex;
