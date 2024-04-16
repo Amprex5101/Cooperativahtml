@@ -17,9 +17,12 @@ h1,h2,h3{
     border-top-style: solid;
     border-width: 1px;
    
+   
 }
 
+
 .nav-principal{
+    
     display: flex;
     justify-content: space-between;
     align-items: center; /* Añadido para centrar verticalmente */
@@ -106,21 +109,26 @@ h1,h2,h3{
     }
 }
 .imagenes_menu {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+    /*display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    */
+    margin: 0.7rem;
     text-align: center;
     justify-content: center;
     padding: 0 0.5rem;
-    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+
   
   img {
     height: 25.5rem;
     width: 42.8rem;
-    object-fit: cover;
-    
+   
   }
+ 
 }
+
   .cantidad-producto {
     display: flex;
     align-items: center;
@@ -144,8 +152,7 @@ h1,h2,h3{
     padding: 0.25rem 0.5rem;
     font-size: 1rem;
     cursor: pointer;
-  }
-  
-  
+  } 
+
   
   
