@@ -148,3 +148,9 @@ header{
         }
     }
 }
+@media(max-width: 1200px){
+    html{
+        box-sizing: border-box;
+        font-size: 50%;
+    }
+}
