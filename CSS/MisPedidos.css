@@ -7,9 +7,13 @@
     --gris: #545454;
     --grisclaro: #DFE9F3;
 }
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
 body{
     background-color: #f2f0f0;
-    margin: 0px;
+    margin: 0rem;
 }
 .nav-principal {
     display: flex;
@@ -17,8 +21,13 @@ body{
     align-items: center; /* Añadido para centrar verticalmente */
     padding: 1rem 3rem;
     background-color: #505050;
+    p{
+        color: white;
+        margin: 0rem;
+        margin-right: 0.5rem;
+    }
     img {
-        height: 26px;
+        height: 2.6rem;
         margin-right: 0.5rem; /* Añadido para separar la imagen del texto */
     }
     .botones{
@@ -29,7 +38,7 @@ body{
             transform: scale(1.1);
         }
     }
-    .carrito {
+    .entrar {
         display: flex;
         align-items: center; /* Añadido para centrar verticalmente */
         a:hover{
@@ -41,13 +50,20 @@ body{
         }
     }
 }
+nav {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: auto;
+    font-size: 3rem;
+}
 header{
-    margin-inline-start: 70px;
-    margin-inline-end: 70px;
+    margin-inline-start: 7rem;
+    margin-inline-end: 7rem;
     margin-block-start: 2rem;
     margin-block-end: 1rem;
     h2{
         margin: 0;
+        font-size: 3.5rem;
     }
 }
 .mispedidos{
@@ -61,90 +77,74 @@ header{
         border-right-style: solid;
         padding-right: 1rem;
         img{
-            height: 26px;
+            height: 4rem;
             margin-right: 0.5rem;
         }
     }
     p{
+        font-size: 2.1rem;
         align-items: center;
         margin: 0px;
     }
 }
-nav {
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    width: auto;
-    font-size: 30px;
-}
+
 .botones{
     a {
-        padding-right: 20px;
+        padding-right: 2rem;
         color: white;
         text-decoration: none;
     }
 }
 .Pedidos{
     color: #000000;
-    margin-inline-start: 70px;
-    margin-inline-end: 70px;
-    margin-block-start: 1rem;
-    margin-block-end: 1rem;
+    margin: 1rem 7rem;
     background-color: white;
-    border-radius: 6px;
+    border-radius: 0.6rem;
     
     .Fecha {
         display: flex;
         justify-content:space-between;
         align-items: center;
-        padding-top: 20px;
-        padding-bottom: 10px;
+        padding: 2rem 3rem 1rem 3rem;
         a{
-            width: 140px;
-            height: 30px;
+            width: 14rem;
+            height: 3rem;
+            font-size: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;            
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 0.6rem;
             background-color: #F87137;
-            margin-inline-end: 30px;
             color: white;
         }
         h1{
-            font-size: 30px;
-            margin-inline-start: 30px;
-            margin-inline-end: 0px;
-            margin-block-start: 0px;
-            margin-block-end: 0px;
+            font-size: 3.5rem;
+            margin: 0;
         }
     }
     .imagenes{
-        display: grid;
-        grid-template-columns: repeat(5,1fr);
+        display: flex;
         padding: 1rem 2rem;
-        gap: 1rem;
+        gap: 4rem;
         border-color: #000000;
-        border-top: 1px;
+        border-top: 0.1rem;
         border-top-style: solid;
         img{
-            height: 170px;
-            width: 300px;
-        }
-        :nth-child(1){
-            grid-column-start: 1;
-            grid-column-end: 2;
-        }
-        :nth-child(2){
-            grid-column-start: 2;
-            grid-column-end: 5;
-        }
-        :nth-child(3){
-            grid-column-start: 5;
-            grid-column-end: 6;
+            height: 17rem;
+            width: 30rem;
         }
         .cantidad{
             display: flex;
             gap: 1rem;
+            padding-top: 10.9rem;
+        }
+        .datos{
+            padding-top: 1.5rem;
+        }
+        p{
+            margin: 0;
+            font-size: 2rem;
         }
     }
 }
