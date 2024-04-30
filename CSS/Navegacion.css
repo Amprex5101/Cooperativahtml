@@ -1,0 +1,167 @@
+@charset "utf-8";
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body{
+    background-color: #f2f0f0;
+    margin: 0rem;
+}
+
+.nav-principal{
+    background-color: #505050;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Añadido para centrar verticalmente */
+    padding: 1rem 3rem;
+    p{
+        color: white;
+        margin: 0rem;
+        margin-right: 0.5rem;
+    }
+    img {
+        height: 2.6rem;
+        margin-right: 0.5rem; /* Añadido para separar la imagen del texto */
+    }
+    .botones{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        a:hover{
+            transform: scale(1.1);
+        }
+        a {
+            padding-right: 2rem;
+            color: white;
+            text-decoration: none;
+        }
+    }
+    .entrar {
+        display: flex;
+        align-items: center; /* Añadido para centrar verticalmente */
+        a:hover{
+            transform: scale(1.1);
+        }
+        .Carrito{
+            align-items: center;  
+            text-decoration: none; 
+
+        }
+        p{
+            margin-right: 2rem;
+        }
+    }
+}
+nav {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: auto;
+    font-size: 3rem;
+}
+.Abrir_Menu,.Cerrar_Menu, .Celu, .carro_celular{
+    display: none;
+}
+
+@media(max-width: 1200px){
+    html{
+        box-sizing: border-box;
+        font-size: 50%;
+    }
+}
+
+/*MEDIA PARA CELULAR SOLAMENTE*/
+@media screen and (max-width:600px){
+    .Abrir_Menu, .Cerrar_Menu{
+        display: block;
+        width: 10rem;
+        height: 10rem;
+        font-size: 8.2rem;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+    .Abrir_Menu{
+        color: white;
+    }
+    .Cerrar_Menu{
+        color: #000000;
+    }
+    .nav-principal{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .carro_celular{
+            display: flex;
+            align-items: center;
+            img{
+                width: 6rem;
+                height: 6rem; 
+                margin-right: 3rem;
+            }
+        }
+    }
+
+    .columnas.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+    .columnas{
+        opacity: 0;
+        visibility: hidden;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        width: 28.3rem;
+        height: 100vh;
+        background-color: #ffffff;
+    }
+    .nav{
+        flex-direction:column-reverse;
+        align-items: center;
+        gap: 4rem;
+        padding: 0;
+        .entrar{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #D5D5D5;
+            width: 100%;
+            height: 13.4rem;
+            img{
+                height: 5.3rem;
+                width: 5.3rem;
+                padding-right: 2.5rem;
+            }
+            p{
+                color: #000000;
+            }
+            a{
+                img{
+                    display: none;
+                }
+            }
+        }
+        .botones{
+            flex-direction: column;
+            align-items: start;
+            gap: 4rem;
+            width: 100%;
+            a{
+                border-bottom: 0.1rem #505050 solid ;
+                font-size: 3.5rem;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                color: #000000;
+                gap: 1rem;
+                padding: 0 0 1rem 0;
+                .Celu{
+                    margin-left: 3rem;
+                    display:inline;
+                }
+            }
+        }
+    }
+}
