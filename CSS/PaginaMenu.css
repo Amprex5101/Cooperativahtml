@@ -1,0 +1,227 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+h1{
+    font-size:5.5rem;
+    text-align: center;
+    
+}
+h1,h2,h3{
+    
+    font-size: 3rem;
+}
+body{
+    margin: 0px;
+}
+.contenedor-navegacion{
+    border-color:darkgrey;
+    border-top-style: solid;
+    border-width: 1px;
+    border: 0px;
+   
+}
+
+
+.nav-principal{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Añadido para centrar verticalmente */
+    padding: 1.9rem 3rem;
+    background-color: #505050;
+    font-size: 25px;
+    color: white;
+    img {
+        height: 26px;
+        margin-right: 0.5rem; /* Añadido para separar la imagen del texto */
+    }
+    a:hover {
+        transform: scale(1.5);
+    }
+    .entrar {
+        display: flex;
+        align-items: center; /* Añadido para centrar verticalmente */
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}
+.nav-principal img{
+   height: 3.5rem;
+   grid-column: 4/5;
+}
+.in{
+    grid-column: 1/5;
+}
+.entrar{
+    grid-column: 5/5;
+}
+
+
+@media(max-width: 1920px){
+    .imgquesadilla{
+        display: flex;
+        justify-content: center;}
+        .imgquesadilla img{
+            border-radius: 1.2rem;
+            height: 39.4rem;
+            width: 114rem;
+        }
+
+}
+@media(max-width: 708px){
+    .imgquesadilla{
+        display: flex;
+        justify-content: center;}
+        .imgquesadilla img{
+            border-radius: 1.2rem;
+            height: 39.4rem;
+            width: 114rem;
+        }}
+@media(min-width: 280px){
+    .imgquesadilla{
+        display: flex;
+        justify-content: center;}
+        .imgquesadilla img{
+            border-radius: 1.2rem;
+            height: 25.4rem;
+            width: 70rem;
+            margin-bottom: 2rem;
+        }}
+.texto-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center; 
+    font-family: 'Tw Cen MT', sans-serif;            
+    p{
+        font-size: 2rem;
+        padding: 1rem;
+        margin: 0;
+    }
+    
+    .precio{
+        padding: 1rem;
+        font-family: 'Tw Cen MT', sans-serif;
+        font-size: 2rem;
+    }
+    .combo_tamaño{
+        height: 2rem;
+        font-family: 'Tw Cen MT', sans-serif;
+        border-radius: 2rem;
+        border-color: #1583d8;
+        border-width: 0.19rem;
+        margin-left: 1rem;
+    }
+    a{
+        background-color: #f14612;
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 1rem;
+        margin-left:1rem;
+        transition: background-color 0.3s ease-out;
+        height: 1.4rem;
+        width: 7.5rem;
+        border-radius: 0.8rem;
+        font-size: 1.5rem;
+    
+    }
+    a:hover{
+        background-color: #b73b16;
+    }
+}
+
+
+
+    @media (min-width:1300px){
+     
+
+        .imagenes_menu {
+            align-items: center;
+            margin: 0.7rem;
+            text-align: center;
+            justify-content: center;
+            padding: 0 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap:1rem;
+            img {
+                height: 25.5rem;
+                width: 42.8rem;
+                object-fit: cover;
+              }
+      
+        }
+    }
+    
+  
+    
+   @media (max-width: 1280px){
+    .imagenes_menu {
+        align-items: center;
+        margin: 0.7rem;
+        text-align: center;
+        justify-content: center;
+        padding: 0 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap:1rem;
+        img {
+            height: 25.5rem;
+            width: 42.8rem;
+            object-fit: cover;
+          }
+  
+    }
+    }
+
+    @media  (max-width: 480px){
+       .imagenes_menu {
+        align-items: center;
+        margin: 0.7rem;
+        text-align: center;
+        justify-content: center;
+        padding: 0 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap:1rem;
+        img {
+            height: 25.5rem;
+            width: 42.8rem;
+            object-fit: cover;
+          }
+  
+    }
+    
+
+  .cantidad-producto {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+  }
+  
+  .input-cantidad {
+    width: 1.9rem;
+    height: 1.9rem;
+    text-align: center;
+    border: 1px solid #1583d8;
+    padding: 0.25rem;
+  }
+  
+  .btn-sumar {
+    background-color: #1583d8;
+    color: white;
+    border: none;
+    height: 1.9rem;
+    width: 1.9rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+  } 
+
+  
+  
