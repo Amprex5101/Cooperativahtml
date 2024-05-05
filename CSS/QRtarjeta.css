@@ -1,0 +1,121 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body{
+    background-color: #f2f0f0;
+    margin: 0rem;
+}
+.nav-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Añadido para centrar verticalmente */
+    padding: 1rem 3rem;
+    background-color: #505050;
+    p{
+        color: white;
+        margin: 0rem;
+        margin-right: 0.5rem;
+    }
+    img {
+        height: 2.6rem;
+        margin-right: 0.5rem; /* Añadido para separar la imagen del texto */
+    }
+    .botones{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        a:hover{
+            transform: scale(1.1);
+        }
+    }
+    .entrar {
+        display: flex;
+        align-items: center; /* Añadido para centrar verticalmente */
+        a:hover{
+            transform: scale(1.1);
+        }
+        a{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+nav {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: auto;
+    font-size: 3rem;
+}
+
+.botones{
+    a {
+        padding-right: 2rem;
+        color: white;
+        text-decoration: none;
+    }
+}
+.datos{
+    font-size: 2rem;
+    padding: 0;
+}
+.Pago{
+    color: #000000;
+    margin-inline-start: 7rem;
+    margin-inline-end: 7rem;
+    margin-block-start: 1rem;
+    margin-block-end: 2rem;
+    background-color: white;
+    border-radius: 0.6rem;
+    h1{
+        font-size: 2rem;
+        margin-block-start: 0rem;
+        margin-block-end: 0rem;
+        margin-inline-start: 3rem;
+        margin-inline-end: 0rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .qr{
+        font-size: 2rem;
+        text-align: left;
+        padding: 3rem;
+        color: rgb(156, 154, 154);
+    }
+    .imagenes{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        padding: 1rem 2rem;
+        gap: 1rem;
+        border-color: #000000;
+        border-top: 1px;
+        border-top-style: solid;
+        img{
+            height: 23rem;
+            width: 23rem;
+        }
+    }
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+    a{
+        background-color:#F14612;
+        font-size: 2.5rem;
+        color: #fff;
+        text-decoration: none;
+        height: 6rem;
+        width: 36rem;
+        border-radius: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+

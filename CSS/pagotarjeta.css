@@ -1,0 +1,123 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body{
+    background-color: #f2f0f0;
+    margin: 0px;
+}
+
+.nav-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: #505050;
+
+    img {
+        height: 26px;
+        margin-right: 0.5rem;
+    }
+
+    .botones{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        a:hover{
+            transform: scale(1.1);
+        }
+    }
+
+    .entrar {
+        display: flex;
+        align-items: center;
+        a:hover{
+            transform: scale(1.1);
+        }
+
+        a{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+nav {
+    font-size: 30px;
+}
+
+.botones{
+    a {
+        padding-right: 20px;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.pagos{
+    color: #000000;
+    margin-inline-start: 70px;
+    margin-inline-end: 70px;
+    margin-block-start: 1rem;
+    margin-block-end: 2rem;
+    background-color: white;
+    border-radius: 6px;
+    align-items: center;
+
+    .datos{
+        font-size: 1.5rem;
+        padding: 3rem;
+        
+        .codi {
+            display: flex;
+            gap: 3rem;
+
+            .let{
+                color: #505050;
+            }
+
+            .letra{
+                color: #505050;
+            }  
+        }   
+    }
+
+    .imagenes{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding: 1rem 2rem;
+        gap: 1rem;
+
+        img{
+            height: 300px;
+            width: 300px;
+            margin: auto;
+            display: block;
+        }
+    }
+    
+    
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    a{
+        background-color:#F14612;
+        font-size: 25px;
+        color: #000000;
+        text-decoration: none;
+        height: 60px;
+        width: 360px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+

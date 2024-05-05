@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Tarjeta</title>
+    <link rel="stylesheet" href="CSS/pagotarjeta.css">
+</head>
+<body>
+    <div class="contenedor-navegacion">
+        <nav class="nav-principal">
+            <div class="botones">
+                <a href="#">Inicio</a>
+                <a href="MisPedidos.html">Mis pedidos</a>
+            </div>
+            <div class="entrar">
+                <img src="img/imagen_2024-03-02_140324687-removebg-preview.png" alt="usuario">
+                <p>Huevito</p>
+                <a href="micarrito.html">
+                    <img src="img/carro-de-compras-rapido (1).png" alt="">
+                </a>
+            </div>
+        </nav>
+    </div>
+    <div class="pagos">
+        <div class="imagenes">
+
+            <div class="datos">
+
+                <div class="numero">
+                    <p>Numero de tarjeta</p>
+                    <input type="text">
+                </div>
+
+                <div>
+                    <p>Nombre y Apellido</p>
+                    <input type="text">
+                </div>
+
+                <div class="codi">
+                    <div class="fecha">
+                        <p>Fecha de vencimiento</p> 
+                        <input type="text" id="fecha_vencimiento" name="fecha_vencimiento" placeholder="MM/AAAA" pattern="(0[1-9]|1[0-2])\/(20[2-9][0-9]|203[0-9])" title="Ingrese una fecha válida en el formato MM/AAAA" required>
+
+                        <!-- Otros campos del formulario, como el nombre del titular, código de seguridad, etc., pueden agregarse aquí -->
+                        
+                        <script>
+                        document.getElementById('fecha_vencimiento').addEventListener('input', function(e) {
+                            var input = e.target;
+                            if (input.value.length === 2 && !input.value.includes('/')) {
+                                input.value += '/';
+                            }
+                        });
+                        </script>
+                
+                        <div class="let">
+                            <p>mes/año</p>
+                        </div>
+                    </div>
+                    
+                    <div class="codigo">
+                        <p>Codigo de seguridad:</p>
+                        <input type="text">
+                        <div class="letra">
+                            <p>CVV</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <div class="tarjeta">
+                <img src="img/tarjeta-bancaria.png" alt="">
+            </div>
+        </div>
+
+
+        <div class="boton">
+            <a href="#">Pagar</a>
+        </div>
+    </div>
+</body>
+</html>
