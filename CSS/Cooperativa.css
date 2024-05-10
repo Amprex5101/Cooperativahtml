@@ -15,86 +15,108 @@ h1,h2,h3{
 body{
     margin: 0px;
 }
-.contenedor-navegacion{
-    border-color:darkgrey;
-    border-top-style: solid;
-    border-width: 1px;
-    border: 0px;
-   
+.menu-container{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
 }
 .seleccion{
+
     margin-left: 3rem;
-    border-bottom: #505050;
-    border-width: 2rem;
+    margin-bottom: 2rem;
+    .borde{
+        border-bottom: solid #505050;
+        border-width: 2px;
+        margin: 0;
+    }
+}
+/*Prueba*/
+   
+.slide {
+    width: 33.33%; /* Un tercio del ancho para cada imagen */
+    object-fit: cover;
 }
 
-.nav-principal{
+@keyframes slides {
+    0% { transform: translateX(0); }
+    33.33% { transform: translateX(0); }
+    33.33% { transform: translateX(-33.33%); }
+    66.66% { transform: translateX(-33.33%); }
+    66.66% { transform: translateX(-66.66%); }
+    100% { transform: translateX(-66.66%); }
+}
+
+@media (min-width: 1201px) {
+ 
+    .slider-container {
+        width: 114rem;
+        height: 39.4rem;
+        position:static;
+        overflow: hidden;
+        border-radius: 2rem;
+        margin-left: 20rem;
+        border: solid #000;
+        border-width: 2px;
+        margin-top: 2rem;
+
+    }
     
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Añadido para centrar verticalmente */
-    padding: 1.9rem 3rem;
-    background-color: #505050;
-    font-size: 25px;
-    color: white;
-    img {
-        height: 26px;
-        margin-right: 0.5rem; /* Añadido para separar la imagen del texto */
-    }
-    a:hover {
-        transform: scale(1.5);
-    }
-    .entrar {
+    .slider {
         display: flex;
-        align-items: center; /* Añadido para centrar verticalmente */
+        width: 300%; /* Ancho del triple para mostrar 3 imágenes */
+        height: 39.4rem;
+        animation: slides 15s infinite; /* Animación de 9 segundos para mostrar cada imagen durante 3 segundos */
+        
     }
-    a{
-        text-decoration: none;
-        color: white;
+}
+@media (max-width: 1200px){
+    
+    .slider-container{
+        width: 80rem;
+        height: 27rem;
+        position:static;
+        overflow: hidden;
+        border-radius: 2rem;
+        margin-left: 20rem;
+        border: solid #000;
+        border-width: 2px;
+        margin-top: 2rem;
+
     }
-}
-.nav-principal img{
-   height: 3.5rem;
-   grid-column: 4/5;
-}
-.in{
-    grid-column: 1/5;
-}
-.entrar{
-    grid-column: 5/5;
-}
-
-
-@media(max-width: 1920px){
-    .imgquesadilla{
+    
+    .slider {
         display: flex;
-        justify-content: center;}
-        .imgquesadilla img{
-            border-radius: 1.2rem;
-            height: 39.4rem;
-            width: 114rem;
-        }
+        width: 300%; /* Ancho del triple para mostrar 3 imágenes */
+        height: 27rem;
+        animation: slides 15s infinite; /* Animación de 9 segundos para mostrar cada imagen durante 3 segundos */
+        
+    }
 
 }
-@media(max-width: 708px){
-    .imgquesadilla{
+@media  (max-width: 768px){
+    .slider-container{
+        width: 60rem;
+        height: 30rem;
+        margin-left: 0;
+        position:static;
+        overflow: hidden;
+        border-radius: 2rem;
+        margin-left: 20rem;
+        border: solid #000;
+        border-width: 2px;
+        margin-top: 2rem;
+
+    }
+    
+    .slider {
         display: flex;
-        justify-content: center;}
-        .imgquesadilla img{
-            border-radius: 1.2rem;
-            height: 39.4rem;
-            width: 114rem;
-        }}
-@media(min-width: 280px){
-    .imgquesadilla{
-        display: flex;
-        justify-content: center;}
-        .imgquesadilla img{
-            border-radius: 1.2rem;
-            height: 25.4rem;
-            width: 70rem;
-            margin-bottom: 2rem;
-        }}
+        width: 300%; /* Ancho del triple para mostrar 3 imágenes */
+        height: 30rem;
+        animation: slides 15s infinite; /* Animación de 9 segundos para mostrar cada imagen durante 3 segundos */
+        
+    }
+}
 .texto-menu{
     display: flex;
     flex-direction: row;
@@ -141,7 +163,7 @@ body{
 
 
 
-    @media (min-width:1300px){
+   /* @media (max-width:2200px){
      
 
         .imagenes_menu {
@@ -160,43 +182,71 @@ body{
               }
       
         }
-    }
+    }*/
+    @media (min-width: 1201px) {
+        .imagenes_menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
     
-  
-    
-   @media (max-width: 1280px){
-    .imagenes_menu {
-        align-items: center;
-        margin: 0.7rem;
-        text-align: center;
-        justify-content: center;
-        padding: 0 0.5rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap:1rem;
-        img {
+        .imagenes_menu img {
             height: 25.5rem;
-            width: 42.8rem;
+            width: 40.8rem;
             object-fit: cover;
-          }
-  
+        }
     }
-    }
+    @media (max-width: 1200px) and (min-width: 769px){
+        .imagenes_menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+    
+        .imagenes_menu img {
+            height: 20rem;
+            width: 35em;
+            object-fit: cover;
+        }
+        .texto-menu{
+            display: grid; 
+  grid-template-columns: 0.857fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "nombre nombre precio"
+    "cantidad-producto combo_tamaño boton"
+    ". . ."; 
+}
+.cantidad-producto { grid-area: cantidad-producto; }
+.nombre { grid-area: nombre; }
+.precio{ grid-area: precio; }
+.combo_tamaño { grid-area: combo_tamaño;}
+.boton { grid-area: boton; }
 
-    @media  (max-width: 480px){
+    }
+    
+
+
+    @media  (max-width: 768px){
        .imagenes_menu {
         align-items: center;
-        margin: 0.7rem;
+       padding: 0;
+       margin: 0;
         text-align: center;
         justify-content: center;
-        padding: 0 0.5rem;
+      
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         gap:1rem;
+      
         img {
-            height: 25.5rem;
-            width: 42.8rem;
-            object-fit: cover;
+            height: 40.5rem;
+            width:90rem;
+            object-fit:cover;
           }
   
     }
