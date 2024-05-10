@@ -11,70 +11,15 @@ body{
     background-color: #f2f0f0;
     margin: 0px;
 }
-.nav-principal {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Añadido para centrar verticalmente */
-    padding: 1rem 3rem;
-    background-color: #505050;
-    img {
-        height: 26px;
-        margin-right: 0.5rem; /* Añadido para separar la imagen del texto */
-    }
-    .botones{
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        a:hover{
-            transform: scale(1.1);
-        }
-    }
-    .carrito {
-        display: flex;
-        align-items: center; /* Añadido para centrar verticalmente */
-        a:hover{
-            transform: scale(1.1);
-        }
-        a{
-            display: flex;
-            align-items: center;
-        }
-        
-    }
-}
-h2{
-    margin-inline-start: 70px;
-    margin-inline-end: 70px;
-    margin-block-start: 2rem;
-    margin-block-end: 1rem;
-}
-nav {
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    width: auto;
-    font-size: 30px;
-}
-.botones{
-    a {
-        padding-right: 20px;
-        color: white;
-        text-decoration: none;
-        
-    }
+.menu-container{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
-.entrar{
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    
-    .nombre{
-        color: var(--blanco);
-        font-size: 1rem;
-       margin-right: 2rem;
-    }
-}
-@media (max-width: 768px){
+
+@media (min-width: 1201px){
     .Pedidos {
         display: flex;
         flex-direction: column;
@@ -87,74 +32,137 @@ nav {
         margin-block-end: 1rem;
         background-color: white;
         border-radius: 6px;
-    
+        height: 65rem;
+        width: 135em;
+        h2{
+            font-size: 5rem;
+        }
         img {
-            height: 14rem;
-            width: 18rem;
+            margin-top: 8rem;
+            height: 29rem;
+            width: 30rem;
         }
     
         .botones {
             display: flex;
             flex-direction: row;
-            gap: 10rem;
+            gap: 35rem;
             justify-content: center; /* Añadido para centrar horizontalmente */
-            margin-top: 12rem;
+          margin-top: 5rem;
             margin-bottom: 1rem;
         }
     
         a {
-            font-weight: 14rem;
+            font-weight: 18rem;
+            font-size: 2rem;
             background-color: #f14612;
-            width: 8rem;
-            height: 1.5rem;
+            width: 15rem;
+            height: 5.5rem;
             border-radius: 1rem;
             text-align: center;
             line-height: 3.5rem; /* Añadido para centrar verticalmente */
-            padding: 0 1rem; /* Añadido para ajustar el espaciado interno */
+           
             color: white; /* Añadido para cambiar el color del texto */
             text-decoration: none; /* Añadido para eliminar el subrayado */
         
         }
     }
 }
-.Pedidos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #000000;
-    margin-inline-start: 70px;
-    margin-inline-end: 70px;
-
-    margin-block-start: 1rem;
-    margin-block-end: 1rem;
-    background-color: white;
-    border-radius: 6px;
-
-    img {
-        height: 19rem;
-        width: 20rem;
-    }
-
-    .botones {
+@media (max-width: 1200px){
+    .Pedidos {
         display: flex;
-        flex-direction: row;
-        gap: 12rem;
-        justify-content: center; /* Añadido para centrar horizontalmente */
-        margin-top: 12rem;
-        margin-bottom: 1rem;
-    }
-
-    a {
-        font-weight: 14rem;
-        background-color: #f14612;
-        width: 10rem;
-        height: 3.5rem;
-        border-radius: 1rem;
-        text-align: center;
-        line-height: 3.5rem; /* Añadido para centrar verticalmente */
-        padding: 0 1rem; /* Añadido para ajustar el espaciado interno */
-        color: white; /* Añadido para cambiar el color del texto */
-        text-decoration: none; /* Añadido para eliminar el subrayado */
+        flex-direction: column;
+        align-items: center;
+        color: #000000;
+        margin-left: 5rem;
+        background-color: white;
+        border-radius: 6px;
+        height: 150rem;
+        width:90%;
+        margin-top: 2rem;
+       
+        h2{
+            font-size: 5rem;
+            text-align: center;
+        }
+        img {
+            margin-top: 25rem;
+            height: 59rem;
+            width: 60rem;
+        }
     
+        .botones {
+            display: flex;
+            flex-direction: row;
+            gap: 15rem;
+            justify-content: center; /* Añadido para centrar horizontalmente */
+          margin-top: 10rem;
+            margin-bottom: 1rem;
+        }
+    
+        a {
+            font-weight: 18rem;
+            font-size: 3rem;
+            background-color: #f14612;
+            width: 28rem;
+            height: 8.5rem;
+            margin-top: 10rem;
+            border-radius: 1rem;
+            text-align: center;
+            line-height: 3.5rem; /* Añadido para centrar verticalmente */
+           
+            color: white; /* Añadido para cambiar el color del texto */
+            text-decoration: none; /* Añadido para eliminar el subrayado */
+        
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .Pedidos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #000000;
+        margin-left: 3rem;
+        margin-top: 2rem;
+        background-color: white;
+        border-radius: 6px;
+        height: 110rem;
+        width: 90%;
+        h2{
+            font-size: 5rem;
+            text-align: center;
+        }
+        img {
+            margin-top: 25rem;
+            height: 29rem;
+            width: 30rem;
+        }
+    
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            justify-content: center; /* Añadido para centrar horizontalmente */
+          margin-top: 8rem;
+            margin-bottom: 1rem;
+        }
+    
+        a {
+            font-weight: 18rem;
+            font-size: 5rem;
+            background-color: #f14612;
+            width: 35rem;
+            height: 8.5rem;
+            margin-top: 3rem;
+            border-radius: 1rem;
+            text-align: center;
+            line-height: 3.5rem; /* Añadido para centrar verticalmente */
+           
+            color: white; /* Añadido para cambiar el color del texto */
+            text-decoration: none; /* Añadido para eliminar el subrayado */
+        
+        }
     }
 }
