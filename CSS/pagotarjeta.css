@@ -32,6 +32,8 @@ body{
     }
 }
 
+
+
 .pagos{
     color: #000000;
     margin-inline-start: 7rem;
@@ -42,12 +44,26 @@ body{
     border-radius: 0.6rem;
     align-items: center;
 
+    h1{
+        color: #505050;
+        text-align: center;
+        border-bottom: 0.1rem solid #000000;
+    }
+
     .datos{
-        font-size: 1.5rem;
-        padding: 3rem;;
-        
+        font-size: 0.5rem;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;  /* para apilar los inputs verticalmente */
+        gap: 2.5rem; 
+        /*align-items: center;*/
+
         .codi {
-            gap: 6rem;
+            display: flex;
+            flex-direction: column repeat(2, 1fr); /* crea dos columnas de igual ancho */
+            gap: 2rem;
+        }
+
 
             .let{
                 color: #505050;
@@ -56,9 +72,17 @@ body{
             .letra{
                 color: #505050;
             }  
-        }   
+        }  
+}
+
+
+@media (max-width: 768px){
+    p{
+        display: none;
     }
-    
+    .tarj{
+            display: none;
+        }
 }
 
 @media (min-width: 768px){
@@ -71,10 +95,15 @@ body{
         background-color: white;
         border-radius: 0.6rem;
         align-items: center;
+
+        h1{
+            display: none;
+        }
     
         .datos{
             font-size: 1.5rem;
             padding: 3rem;
+            align-content: left;
             
             .codi {
                 display: flex;
@@ -108,11 +137,6 @@ body{
     }
 }
 
-@media (max-width: 768px){
-    p, img {
-        display: none;
-    }
-}
 
 .boton{
     display: flex;
