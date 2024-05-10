@@ -64,7 +64,6 @@ body{
             gap: 2rem;
         }
 
-
             .let{
                 color: #505050;
             }
@@ -130,6 +129,69 @@ body{
                 width: 30rem;
                 margin: auto;
                 display: block;
+            }
+        }
+        
+        
+    }
+}
+
+@media (min-width: 1200px){
+    .pagos{
+        color: #000000;
+        margin-inline-start: 7rem;
+        margin-inline-end: 7rem;
+        margin-block-start: 1rem;
+        margin-block-end: 2rem;
+        background-color: white;
+        border-radius: 0.6rem;
+        align-items: center;
+
+        h1{
+            display: none;
+        }
+    
+        .datos{
+            font-size: 1.5rem;
+            padding: 3rem;
+            align-content: left;
+            
+            .codi {
+                display: flex;
+                gap: 3rem;
+    
+                .let{
+                    color: #505050;
+                }
+    
+                .letra{
+                    color: #505050;
+                }  
+            }   
+        }
+    
+        .imagenes{
+            display: grid;
+            grid-template-rows: repeat(2,1fr);
+            grid-template-rows: auto 1fr; /* Una fila para la imagen y otra para los inputs */
+            align-items: start;   
+            padding: 1rem 2rem;
+            gap: 1rem;
+    
+            img {
+                .tarj{
+                    height: 30rem;
+                    width: 30rem;
+                    margin: auto;
+                    display: block;
+                    grid-row: 1;  /* Coloca la imagen en la primera fila */
+                
+                }
+            }
+
+
+            input {
+                grid-row: 2;  /* Coloca los inputs en la segunda fila */
             }
         }
         
