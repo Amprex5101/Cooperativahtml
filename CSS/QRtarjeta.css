@@ -14,6 +14,14 @@ body{
     left: 0;
     width: 100%;
 }
+@media (min-width: 768){
+    .menu-container{
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}
 
 .botones{
     a {
@@ -26,6 +34,7 @@ body{
     font-size: 2rem;
     padding: 0;
 }
+
 .Pago{
     color: #000000;
     margin-inline-start: 7rem;
@@ -34,6 +43,7 @@ body{
     margin-block-end: 2rem;
     background-color: white;
     border-radius: 0.6rem;
+
     h1{
         font-size: 2rem;
         margin-block-start: 0rem;
@@ -45,13 +55,12 @@ body{
     }
     .qr{
         font-size: 2rem;
-        text-align: left;
+        text-align: center;
         padding: 3rem;
         color: rgb(156, 154, 154);
     }
     .imagenes{
-        display: grid;
-        grid-template-columns: repeat(5,1fr);
+        align-items: center;
         padding: 1rem 2rem;
         gap: 1rem;
         border-color: #000000;
@@ -62,6 +71,22 @@ body{
             width: 23rem;
         }
     }
+
+    @media (min-width: 768px){
+        .imagenes{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            padding: 1rem 2rem;
+            gap: 1rem;
+            border-color: #000000;
+            border-top: 1px;
+            border-top-style: solid;
+            img{
+                height: 23rem;
+                width: 23rem;
+            }
+        }
+    }
 }
 
 .boton{
@@ -70,15 +95,35 @@ body{
     padding-bottom: 3rem;
     a{
         background-color:#F14612;
-        font-size: 2.5rem;
+        font-size: 2rem;
         color: #fff;
         text-decoration: none;
         height: 6rem;
-        width: 36rem;
+        width: 19rem;
         border-radius: 0.8rem;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+}
+
+@media (min-width: 768px){
+    .boton{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 3rem;
+        a{
+            background-color:#F14612;
+            font-size: 2.5rem;
+            color: #fff;
+            text-decoration: none;
+            height: 6rem;
+            width: 36rem;
+            border-radius: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
 
