@@ -6,101 +6,79 @@
     <title>ESTRUCTURA HTML</title>
     <link rel="stylesheet" href="CSS/micarrito.css">
     <script src="JS/Navegacion.js"></script>
+    <script src="JS/Carrito.js" defer></script>
 </head>
 <body>
-    
     <div id="menu-container" class="menu-container"></div>
     <div class="Compras">
         <h1>Mi carrito</h1>
-
-
-        <div class="imagenes">
-            <div class="detalles">
-                <img src="img/blanco.jpg" alt="">
-                <div class="datos">
-                    <h3>Chavindeca</h3>
-                    <div class="cantidad">
-                        <p>Cantidad:</p>
-                        <p>1</p>
-                        <p>Tamaño:</p>
-                        <p>Grande</p>
-                    </div>
-                </div>
-            </div>
-            <p class="precio">$60</p>
-        </div>
-
-        <div class="imagenes">
-            <div class="detalles">
-                <img src="img/blanco.jpg" alt="">
-                <div class="datos">
-                    <h3>Chavindeca</h3>
-                    <div class="cantidad">
-                        <p>Cantidad:</p>
-                        <p>1</p>
-                        <p>Tamaño:</p>
-                        <p>Grande</p>
-                    </div>
-                </div>
-            </div>
-            <p class="precio">$60</p>
-        </div>
-
-        <div class="imagenes">
-            <div class="detalles">
-                <img src="img/blanco.jpg" alt="">
-                <div class="datos">
-                    <h3>Chavindeca</h3>
-                    <div class="cantidad">
-                        <p>Cantidad:</p>
-                        <p>1</p>
-                        <p>Tamaño:</p>
-                        <p>Grande</p>
-                    </div>
-                </div>
-            </div>
-            <p class="precio">$60</p>
-        </div>
-        
-        <div class="imagenes">
-            <div class="detalles">
-                <img src="img/blanco.jpg" alt="">
-                <div class="datos">
-                    <h3>Chavindeca</h3>
-                    <div class="cantidad">
-                        <p>Cantidad:</p>
-                        <p>1</p>
-                        <p>Tamaño:</p>
-                        <p>Grande</p>
-                    </div>
-                </div>
-            </div>
-            <p class="precio">$60</p>
-        </div>
-
-
-        <div class="imagenes">
-            <div class="detalles">
-                <img src="img/blanco.jpg" alt="">
-                <div class="datos">
-                    <h3>Chavindeca</h3>
-                    <div class="cantidad">
-                        <p>Cantidad:</p>
-                        <p>1</p>
-                        <p>Tamaño:</p>
-                        <p>Grande</p>
-                    </div>
-                </div>
-            </div>
-            <p class="precio">$60</p>
-        </div>
+        <div id="carrito-contenido"></div>
         <div class="total">
-                <h2>Total: </h2>
-                <h2>200</h2>
+            <h2>Total: </h2>
+            <h2 id="total-compra">$0</h2>
         </div>
         <div class="boton">
             <a href="Metodo-Pago.html">Pagar</a>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carritoContenido = document.getElementById('carrito-contenido');
+            const totalCompra = document.getElementById('total-compra');
+            let total = 0;
+
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+            carrito.forEach(producto => {
+                const divImagenes = document.createElement('div');
+                divImagenes.classList.add('imagenes');
+
+                const divDetalles = document.createElement('div');
+                divDetalles.classList.add('detalles');
+
+                const img = document.createElement('img');
+                img.src = producto.imagenSrc;
+                img.alt = producto.nombre;
+
+                const divDatos = document.createElement('div');
+                divDatos.classList.add('datos');
+
+                const h3 = document.createElement('h3');
+                h3.textContent = producto.nombre;
+
+                const divCantidad = document.createElement('div');
+                divCantidad.classList.add('cantidad');
+
+                const pCantidad = document.createElement('p');
+                pCantidad.textContent = `Cantidad: ${producto.cantidad}`;
+
+                const pTamaño = document.createElement('p');
+                pTamaño.textContent = `Tamaño: ${producto.tamaño}`;
+
+                divCantidad.appendChild(pCantidad);
+                divCantidad.appendChild(pTamaño);
+
+                divDatos.appendChild(h3);
+                divDatos.appendChild(divCantidad);
+
+                divDetalles.appendChild(img);
+                divDetalles.appendChild(divDatos);
+
+                const pPrecio = document.createElement('p');
+                pPrecio.classList.add('precio');
+                pPrecio.textContent = `$${producto.precio}`;
+
+                divImagenes.appendChild(divDetalles);
+                divImagenes.appendChild(pPrecio);
+
+                carritoContenido.appendChild(divImagenes);
+
+                total += producto.precio * producto.cantidad;
+            });
+
+            totalCompra.textContent = `$${total}`;
+        });
+    </script>
 </body>
 </html>
