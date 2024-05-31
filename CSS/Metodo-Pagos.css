@@ -71,9 +71,9 @@ body{
     justify-content: center;
     padding-bottom: 3rem;
     border-top: #707070 solid 0.1rem;
-    padding-top: 18rem;
-    padding-bottom: 10rem;
-    a{
+    padding-top: 8rem;
+    padding-bottom: 7rem;
+    button{
         background-color:#F14612;
         font-size: 3rem;
         color: #ffffff;
@@ -84,7 +84,9 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
     }
+
 }
 
 @media(max-width: 1200px){
