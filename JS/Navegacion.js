@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const menuContainer = document.getElementById("menu-container");
 
   // Cargar el contenido del menú hamburguesa desde 'Navegacion.html'
-  fetch("Navegacion.html")
+  fetch("Nav.php")
     .then(response => response.text())
     .then(data => {
       // Insertar el menú en el contenedor

@@ -13,14 +13,14 @@ if (empty($_POST['password'])) {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     try {
-        $conexion = new PDO('mysql:host=localhost:3308;dbname=cooperativa_bd', 'root', 'root');
+        $conexion = new PDO('mysql:host=localhost:3307;dbname=cooperativa_bd', 'root', '');
         $enunciado = $conexion->prepare("INSERT INTO login VALUES(?,?,?)");
         $enunciado->bindParam(1, $nombre_usuario);
         $enunciado->bindParam(2, $correo);
         $enunciado->bindParam(3, $hashedPassword);
 
         if ($enunciado->execute()) {
-            header("Location: inicio-sesion.html");
+            header("Location: index.php");
         } else {
             echo "Error al insertar datos: " . $enunciado->errorInfo()[2];
         }

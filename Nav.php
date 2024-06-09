@@ -7,19 +7,19 @@
             <button class="Cerrar_Menu" id="cerrar"><i class="bi bi-x"></i></button>
             <div class="nav">
                 <div class="botones">
-                    <a href="EstructuraProyecto.html"><img src="img/casa.png" alt="Celular" class="Celu">Inicio</a>
-                    <a href="MisPedidos.html"><img src="img/lista-de-verificacion.png" alt="Celular" class="Celu">Mis pedidos</a>
+                    <a href="EstructuraProyecto.php"><img src="img/casa.png" alt="Celular" class="Celu">Inicio</a>
+                    <a href="MisPedidos.php"><img src="img/lista-de-verificacion.png" alt="Celular" class="Celu">Mis pedidos</a>
                 </div>
                 <div class="entrar">
                     <img src="img/imagen_2024-03-02_140324687-removebg-preview.png" alt="usuario">
                     <p>Huevito</p>
-                    <a href="micarrito.html" class="Carrito">
+                    <a href="micarrito.php" class="Carrito">
                         <img src="img/carro-de-compras-rapido (1).png" alt="">
                     </a>
                 </div>
             </div>
         </div>
-        <a href="micarrito.html" class="carro_celular">
+        <a href="micarrito.php" class="carro_celular">
             <img src="img/carro-de-compras-rapido (1).png" alt="usuario">
         </a>
     </nav>

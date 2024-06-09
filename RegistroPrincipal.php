@@ -9,7 +9,7 @@
 <body>
     <div class="contenedor-formulario contenedor">
         <div class="fondo">
-            <img class="fondoinicio" src="img/recetas-de-comida-típicas-de-Oaxaca-11-1.jpeg" alt="">
+            <img class="fondoinicio" src="img/recetas.jpeg" alt="">
         </div>
         <form action="registro.php" method="POST" class="formularioo">
             <div>

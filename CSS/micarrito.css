@@ -16,7 +16,7 @@ body{
     margin: 0rem;
 }
 .menu-container{
-    position:sticky;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -44,6 +44,12 @@ body{
         img{
             height: 10rem;
             width: 30rem;
+        }
+        @media (min-width: 768){
+            img{
+                height: 5rem;
+                width: 15rem;
+            }
         }
         h3{
             font-size: 3rem;

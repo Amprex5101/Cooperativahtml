@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pago Tarjeta</title>
     <link rel="stylesheet" href="CSS/pagotarjeta.css">
-    <script src="JS/Navegacion.js"></script>
+    <script src="JS/Navegacion.js?v=<?php echo time(); ?>"></script>
 
 </head>
 <body>
@@ -18,7 +18,7 @@
 
                 <div class="numero">
                     <p>Numero de tarjeta</p>
-                    <input type="text" placeholder="Numero de targeta">
+                    <input type="text" placeholder="Numero de tarjeta">
                 </div>
 
                 <div>
@@ -66,7 +66,7 @@
 
 
         <div class="boton">
-            <a href="QRtarjeta.html">Pagar</a>
+            <a href="QRtarjeta.php">Pagar</a>
         </div>
     </div>
 </body>

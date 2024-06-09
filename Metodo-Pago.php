@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESTRUCTURA HTML</title>
     <link rel="stylesheet" href="CSS/Metodo-Pagos.css">
-    <script src="JS/Navegacion.js"></script>
+    <script src="JS/Navegacion.js?v=<?php echo time(); ?>"></script>
 </head>
 <body>
     <div id="menu-container" class="menu-container"></div>
@@ -37,9 +37,9 @@
         $metodo_pago = $_POST['pago'];
         
         if ($metodo_pago == 'debito') {
-            echo "<script>window.location.href = 'pagotarjeta.html';</script>";
+            echo "<script>window.location.href = 'pagotarjeta.php';</script>";
         } elseif ($metodo_pago == 'efectivo') {
-            echo "<script>window.location.href = 'QRefectivo';</script>";
+            echo "<script>window.location.href = 'QRefectivo.php';</script>";
         }
     }
     ?>

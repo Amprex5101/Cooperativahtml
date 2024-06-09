@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Efectivo</title>
     <link rel="stylesheet" href="CSS/QRefectivo.css">
-    <script src="JS/Navegacion.js"></script>
+    <script src="JS/Navegacion.js?v=<?php echo time(); ?>"></script>
 </head>
 <body>
     <div id="menu-container" class="menu-container"></div>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="boton">
-            <a href="MisPedidos.html">Volver a Mis Pedidos</a>
+            <a href="MisPedidos.php">Volver a Mis Pedidos</a>
         </div>
     </div>
 </body>
