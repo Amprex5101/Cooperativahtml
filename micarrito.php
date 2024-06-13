@@ -69,7 +69,9 @@ try {
 
             echo '<div class="imagenes">
                     <div class="detalles">
-                        <img src="'.$imagen.'" alt="">
+                        <div class="imagen">
+                        <img src="'.$imagen.'" alt="" class="responsive-image">
+                        </div>
                         <div class="datos">
                             <h3>'.$fila['comida'].'</h3>
                             <div class="cantidad">

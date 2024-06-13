@@ -7,78 +7,78 @@
     --gris: #545454;
     --grisclaro: #DFE9F3;
 }
-html{
+html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
-body{
+body {
     background-color: #f2f0f0;
     margin: 0rem;
 }
-.menu-container{
+.menu-container {
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
 }
-.Compras{
+.Compras {
     color: #000000;
     margin: 1rem 7rem 2rem;
     background-color: white;
     border-radius: 0.6rem;
-    h1{
-        font-size: 3.5rem ;
-        margin: 0px 0px 0px 3rem;
-        padding: 20px 0px;
-    }
-    .imagenes{
-        font-size: 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center; /* Añadido para centrar verticalmente */
-        padding: 1.6rem 8rem 1.6rem 4.8rem;
-        gap: 1rem;
-        border-color: #000000;
-        border-top: 0.1rem;
-        border-top-style: solid;
-        img{
-            height: 10rem;
-            width: 30rem;
-        }
-        @media (min-width: 768){
-            img{
-                height: 5rem;
-                width: 15rem;
-            }
-        }
-        h3{
-            font-size: 3rem;
-            margin: 0rem;
-        }
-        .cantidad{
-            display: flex;
-            gap: 1rem;
-            margin-top: 5.02rem;
-        }
-        p{
-            margin:0rem;
-            font-size: 2.2rem;
-        }
-        .datos{
-            margin: 0 0 0 2vw; /* 5% del ancho de la ventana en los márgenes horizontal */
-
-        }
-        .precio{
-            text-align: center;
-            justify-content: center;
-        }
-        .detalles{
-            display: flex;
-            justify-content: center;
-        }
-    }
 }
-.total{
+.Compras h1 {
+    font-size: 3.5rem;
+    margin: 0px 0px 0px 3rem;
+    padding: 20px 0px;
+}
+.imagenes {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 8rem 1.6rem 4.8rem;
+    gap: 1rem;
+    border-color: #000000;
+    border-top: 0.1rem;
+    border-top-style: solid;
+}
+.imagenes h3 {
+    font-size: 3rem;
+    margin: 0rem;
+}
+.cantidad {
+    display: flex;
+    gap: 1rem;
+    margin-top: 5.02rem;
+}
+.imagenes p {
+    margin: 0rem;
+    font-size: 2.2rem;
+}
+.datos {
+    margin: 0 0 0 2vw;
+}
+.precio {
+    text-align: center;
+    justify-content: center;
+}
+.detalles {
+    display: flex;
+    justify-content: center;
+}
+.imagen {
+    height: 100%;
+}
+.responsive-image {
+    height: 10rem;
+    width: 30rem;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 30rem;
+    min-height: 10rem;
+}
+.total {
     border-color: #000000;
     border-top: 0.1rem;
     border-top-style: solid;
@@ -86,31 +86,46 @@ body{
     justify-content: right;
     padding: 1.6rem 8rem 1.6rem 4.8rem;
     gap: 1rem;
-    h2{    
-        color: black;
-        font-size: 2.2rem;
-    }
 }
-.boton{
+.total h2 {
+    color: black;
+    font-size: 2.2rem;
+}
+.boton {
     display: flex;
     justify-content: center;
     padding-bottom: 3rem;
-    a{
-        background-color:#F14612;
-        font-size: 3rem;
-        color: #ffffff;
-        text-decoration: none;
-        height: 6rem;
-        width: 36rem;
-        border-radius: 0.8rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+}
+.boton a {
+    background-color: #F14612;
+    font-size: 3rem;
+    color: #ffffff;
+    text-decoration: none;
+    height: 6rem;
+    width: 36rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 1200px) and (min-width: 768px) {
+    html {
+        font-size: 50%;
     }
 }
-@media(max-width: 1200px){
+@media (max-width: 768px) {
     html{
-        box-sizing: border-box;
-        font-size: 50%;
+        font-size: 40%;
+    }
+    .imagenes {
+        display: flex;
+        justify-content:space-between;
+        align-items: flex-end;
+        padding: 1rem;
+    }
+    .detalles {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 }

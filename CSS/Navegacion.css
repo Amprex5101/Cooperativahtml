@@ -64,10 +64,14 @@ nav {
     display: none;
 }
 
-@media(max-width: 1200px){
-    html{
-        box-sizing: border-box;
+@media (max-width: 1200px) and (min-width: 768px) {
+    html {
         font-size: 50%;
+    }
+}
+@media (max-width: 768px) {
+    html{
+        font-size: 40%;
     }
 }
 

@@ -7,108 +7,196 @@
     --gris: #545454;
     --grisclaro: #DFE9F3;
 }
-html{
+
+html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
-body{
-    background-color: #f2f0f0;
-    margin: 0rem;
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
-.menu-container{
-    position:sticky;
+
+body {
+    background-color: #f2f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Es recomendable especificar una fuente */
+}
+
+.menu-container {
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
 }
-header{
+
+header {
     margin-inline-start: 7rem;
     margin-inline-end: 7rem;
     margin-block-start: 2rem;
     margin-block-end: 1rem;
-    h2{
-        margin: 0;
-        font-size: 3.5rem;
-    }
 }
-.mispedidos{
+
+header h2 {
+    margin: 0;
+    font-size: 3.5rem;
+}
+
+.mispedidos {
     display: flex;
     align-items: center;
-    .Filtrar{
-        display: flex;
-        align-items: center;
-        margin-right: 1rem;
-        border-right: #000000;
-        border-right-style: solid;
-        padding-right: 1rem;
-        img{
-            height: 4rem;
-            margin-right: 0.5rem;
-        }
-    }
-    p{
-        font-size: 2.1rem;
-        align-items: center;
-        margin: 0px;
+}
+
+.mispedidos .Filtrar {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    border-right: 1px solid #000000;
+    padding-right: 1rem;
+}
+
+.mispedidos .Filtrar img {
+    height: 4rem;
+    margin-right: 0.5rem;
+}
+
+.mispedidos p {
+    font-size: 2.1rem;
+    margin: 0;
+}
+
+.Pedidos {
+    color: #000000;
+    margin: 2rem 7rem;
+    background-color: white;
+    border-radius: 0.6rem;
+}
+
+.Pedidos .Fecha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem 1rem 3rem;
+}
+
+.Pedidos .Fecha a {
+    width: 14rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 0.6rem;
+    background-color: #F87137;
+    color: white;
+}
+
+.Pedidos .Fecha h1 {
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+.Pedidos .Fecha .Metodo-Pago {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Pedidos .Fecha .Metodo-Pago p {
+    font-size: 2.1rem;
+    margin: 0;
+}
+
+.Pedidos .imagenes {
+    display: flex;
+    padding: 1rem 2rem;
+    gap: 4rem;
+    border-top: 0.1rem solid #000000;
+}
+
+.Pedidos .imagenes img {
+    height: 17rem;
+    width: 30rem;
+}
+
+.Pedidos .imagenes .cantidad {
+    display: flex;
+    gap: 1rem;
+}
+
+.Pedidos .imagenes .datos {
+    display: flex;
+    padding-top: 1.5rem;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.Pedidos .imagenes .datos p {
+    margin: 0;
+    font-size: 2rem;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 50%;
     }
 }
 
-.Pedidos{
-    color: #000000;
-    margin: 1rem 7rem;
-    background-color: white;
-    border-radius: 0.6rem;
-    
-    .Fecha {
-        display: flex;
-        justify-content:space-between;
-        align-items: center;
-        padding: 2rem 3rem 1rem 3rem;
-        a{
-            width: 14rem;
-            height: 3rem;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;            
-            text-decoration: none;
-            border-radius: 0.6rem;
-            background-color: #F87137;
-            color: white;
-        }
-        h1{
-            font-size: 3.5rem;
-            margin: 0;
-        }
-    }
-    .imagenes{
-        display: flex;
+@media (max-width: 768px) {
+
+
+    .Pedidos .Fecha {
         padding: 1rem 2rem;
-        gap: 4rem;
-        border-color: #000000;
-        border-top: 0.1rem;
-        border-top-style: solid;
-        img{
-            height: 17rem;
-            width: 30rem;
-        }
-        .cantidad{
-            display: flex;
-            gap: 1rem;
-            padding-top: 10.9rem;
-        }
-        .datos{
-            padding-top: 1.5rem;
+    }
+
+    .Pedidos .imagenes {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Pedidos .imagenes img {
+        width: 100%;
+        height: auto;
+    }
+
+    .mispedidos p, .Pedidos .Fecha p, .Pedidos .imagenes .datos p {
+        font-size: 4rem !important; /* Aumenta el tamaño de los <p> y usa !important */
+    }
+    .Metodo-Pago {
+        justify-content: space-between !important;
+    }
+    .Metodo-Pago {
+        a{
+            height: 6rem !important;
+            width: 20rem !important;
+            font-size: 2.5rem !important;
         }
         p{
-            margin: 0;
-            font-size: 2rem;
+            font-size: 2.5rem !important;
         }
     }
 }
-@media(max-width: 1200px){
-    html{
-        box-sizing: border-box;
-        font-size: 50%;
+@media (max-width: 540px) {
+    .Metodo-Pago {
+        a{
+            height: 3rem !important;
+            width: 10rem !important;
+            font-size: 1.5rem !important;
+        }
+        p{
+            font-size: 1.5rem !important;
+        }
+    }
+    .mispedidos p, .Pedidos .Fecha p, .Pedidos .imagenes .datos p, .Fecha h1{
+        font-size: 2.2rem !important; /* Aumenta el tamaño de los <p> y usa !important */
+    }
+}
+@media (max-width: 400px) {
+    .mispedidos p, .Pedidos .Fecha p, .Pedidos .imagenes .datos p, .Fecha h1{
+        font-size: 1.5rem !important; /* Aumenta el tamaño de los <p> y usa !important */
     }
 }
