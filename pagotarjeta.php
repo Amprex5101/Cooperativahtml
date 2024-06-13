@@ -45,16 +45,17 @@
                         <div class="let">
                             <p>mes/año</p>
                         </div>
-                    </div>
-                    
+                    </div>            
+                        
                     <div class="codigo">
-                        <p>Codigo de seguridad:</p>
-                        <input type="text" placeholder="CVV">
-                        <div class="letra">
-                            <p>CVV</p>
-                        </div>
+                            <p>Codigo de seguridad:</p>
+                            <input type="text" placeholder="CVV">
+                            <div class="letra">
+                                <p>CVV</p>
+                            </div>
                     </div>
                 </div>
+           
                 
             </div>
 
