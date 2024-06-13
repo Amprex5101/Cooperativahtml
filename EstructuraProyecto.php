@@ -1,13 +1,12 @@
 <?php
-            session_start();
+    session_start();
 
-            if (!isset($_SESSION['usuario'])) {
-                // Redirige al usuario a la página de inicio de sesión si no está autenticado
-                header("Location: login.php");
-                exit();
-            }
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: login.php");
+        exit();
+    }
 
-            $nombreUsuario = $_SESSION['nombre'] ?? '';
+    $nombreUsuario = $_SESSION['nombre'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,7 +23,7 @@
 
 <body>
     <div id="menu-container" class="menu-container"></div>
-    <h1>MENÚ</h1>
+   
     <div class="slider-wrapper">
         <div class="slider-container">
             <div class="slider">
@@ -34,28 +33,16 @@
             </div>
         </div>
     </div>
-    <div class="seleccion">
-        <select>
-            <option>Cooperativa 1</option>
-            <option>Cooperativa 2</option>
-        </select>
-        <div class="borde"></div>
-    </div>
+
+    <!-- Adding a margin between the slider and images menu -->
+    <div class="margen"></div>
 
     <div class="imagenes_menu">
-
-        <?php                        
+        <?php
             try {
-                $conexion = new PDO('mysql:host=localhost:3307;dbname=cooperativa_bd', 'root', '');
-                $productos = array('Chavindeca','Hamburguesa','Quesadillas D',
-                                'Quesadilla','Sandwich','Sincronizada',
-                                'Torta','Torta Doble','Tacos Dorados',
-                                'Morisqueta','Papas','Tacos');
-                                
-                $imagenes = array('img/chavindeca.jpg','img/hamburguesa.jpg','img/quesadilla dorada.jpg','img/quesadilla.jpg','img/sandwich.jpg',
-                                'img/sincronizada.jpg','img/tortadeshebrada.jpg','img/TortaDoble.jpeg',
-                                'img/TacosDorados.jpeg','img/Morisqueta.jpeg',
-                                'img/papas.jpeg','img/Tacos.jpeg');
+                $conexion = new PDO('mysql:host=localhost:3308;dbname=cooperativa_bd', 'root', 'root');
+                $productos = array('Chavindeca', 'Hamburguesa', 'Quesadillas D', 'Quesadilla', 'Sandwich', 'Sincronizada', 'Torta', 'Torta Doble', 'Tacos Dorados', 'Morisqueta', 'Papas', 'Tacos');
+                $imagenes = array('img/chavindeca.jpeg', 'img/hamburguesa.jpg', 'img/quesadilla dorada.jpg', 'img/quesadilla.jpg', 'img/sandwich.jpg', 'img/sincronizada.jpg', 'img/tortadeshebrada.jpg', 'img/Tortadoble.jpg', 'img/TacosDorados.jpeg', 'img/Morisqueta.jpeg', 'img/papas.jpeg', 'img/Tacos.jpeg');
                 $i = 0;
                 foreach ($productos as $producto) {
                     $consulta2 = "
@@ -86,7 +73,8 @@
                         
                         echo '  </select>
                                 <button class="btn-añadir">Añadir</button> 
-                            </div>
+                                </div>
+                                <div class="mensaje-carrito">Se ha añadido al carrito</div>
                         </div>';
                     }
                     $i++;
@@ -97,18 +85,17 @@
         ?>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const buttons = document.querySelectorAll('.btn-añadir');
             buttons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     const productoDiv = button.closest('.producto');
                     const nombre = productoDiv.querySelector('.nombre').innerText;
                     const precio = parseFloat(productoDiv.querySelector('.combo_tamaño').selectedOptions[0].dataset.precio);
                     const cantidad = parseInt(productoDiv.querySelector('.input-cantidad').value);
                     const opcion = productoDiv.querySelector('.combo_tamaño').value;
                     const total = precio * cantidad;
-                    
-                    // Obtener el nombre de usuario de la sesión PHP
+
                     const nombreUsuario = '<?php echo isset($_SESSION['nombre']) ? $_SESSION['nombre'] : ''; ?>';
 
                     const data = {
@@ -116,24 +103,30 @@
                         opciones: opcion,
                         cantidad: cantidad,
                         total: total,
-                        usuario: nombreUsuario // Agregar el nombre de usuario al objeto data
+                        usuario: nombreUsuario
                     };
 
-                    fetch('procesar_pedido.php',  {
+                    fetch('procesar_pedido.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify(data)
                     })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Success:', data);
-                        // Aquí puedes añadir cualquier lógica adicional después de la inserción exitosa
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                    });
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Success:', data);
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                        });
+
+                   
+                    const mensaje = productoDiv.querySelector('.mensaje-carrito');
+                    mensaje.classList.add('mostrar');
+                    setTimeout(() => {
+                        mensaje.classList.remove('mostrar');
+                    }, 2000);
 
                     console.log('Nombre:', nombre);
                     console.log('Precio:', precio);

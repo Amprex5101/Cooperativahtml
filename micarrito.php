@@ -11,7 +11,7 @@ $nombreUsuario = $_SESSION['nombre'] ?? '';
 $correo = $_SESSION['correo'] ?? '';
 
 try {
-    $conexion = new PDO('mysql:host=localhost:3307;dbname=cooperativa_bd', 'root', '');
+    $conexion = new PDO('mysql:host=localhost:3308;dbname=cooperativa_bd', 'root', 'root');
     $consulta = "SELECT p.usuario, p.comida, p.opciones, SUM(p.cantidad) cantidad, SUM(p.total) total 
                  FROM pedidos p, login l 
                  WHERE p.pagado=0 AND p.cancelado=0 AND l.correo=:correo AND p.usuario=:usuario 
