@@ -71,6 +71,20 @@ body{
             .letra{
                 color: #505050;
             }  
+
+            .imagenes{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            padding: 1rem 2rem;
+            gap: 1rem;
+    
+            img{
+                height: 30rem;
+                width: 30rem;
+                margin: auto;
+                display: block;
+            }
+        }
         }  
 }
 
@@ -82,6 +96,16 @@ body{
     .tarj{
             display: none;
         }
+
+    .pagos .datos .codi {
+        display: flex;
+        flex-direction: column; /* Cambia a una sola columna en modo móvil */
+        gap: 2rem;
+    }
+
+    .pagos .datos .codi input:nth-child(4) {
+        margin-top: 2rem; /* Espacio adicional entre los campos */
+    }
 }
 
 @media (min-width: 768px){
@@ -105,7 +129,9 @@ body{
             align-content: left;
             
             .codi {
-                align-content: left;
+                display: flex;
+                gap: 1rem;
+    
                 .let{
                     color: #505050;
                 }
@@ -115,6 +141,21 @@ body{
                 }  
             }   
         }
+    
+        .imagenes{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            padding: 1rem 2rem;
+            gap: 1rem;
+    
+            img{
+                height: 30rem;
+                width: 30rem;
+                margin: auto;
+                display: block;
+            }
+        }
+        
         
     }
 }
@@ -157,6 +198,3 @@ body{
         }
     }
 }
-
-
-
