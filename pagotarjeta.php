@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="boton">
-            <button id="pay-button">Pagar</button>
+            <button id="pay-button" onclick="window.location.href='QRtarjeta.php'">Pagar</button>
         </div>
     </div>
 
