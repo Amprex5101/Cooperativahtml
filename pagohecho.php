@@ -17,8 +17,9 @@ header('Content-Type: application/json');
 $tipopago = $_POST['tipopago'] ?? '';
 
 if ($tipopago) {
+    include 'conexion.php';
     try {
-        $conexion = new PDO('mysql:host=localhost:3307;dbname=cooperativa_bd', 'root', '');
+        $conexion = obtenerConexion();
         $fecha = date('Y-m-d'); //, strtotime('-1 day')
         // Contar el número de pedidos
         $consulta2 = "SELECT COUNT(DISTINCT numerodepedido) AS num_pedidos FROM pedidos";

@@ -10,8 +10,9 @@ if (!isset($_SESSION['usuario'])) {
 $nombreUsuario = $_SESSION['nombre'] ?? '';
 $correo = $_SESSION['correo'] ?? '';
 // Establecer la zona horaria de Apatzingán, Michoacán, México
+include 'conexion.php';
 try {
-    $conexion = new PDO('mysql:host=localhost:3307;dbname=cooperativa_bd', 'root', '');
+    $conexion = obtenerConexion();
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Consulta para obtener los pedidos distintos en orden descendente por fecha y número de pedido
@@ -26,7 +27,7 @@ try {
           AND p.cancelado = 0
           AND l.correo = :correo
           AND p.usuario = :usuario
-          AND p.fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 30 DAY) AND CURDATE()
+          AND p.fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 5 DAY) AND CURDATE()
         ORDER BY p.fecha DESC, p.numerodepedido DESC;
     ";
 
@@ -51,7 +52,7 @@ try {
           AND p.cancelado = 0
           AND l.correo = :correo
           AND p.usuario = :usuario
-          AND p.fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 30 DAY) AND CURDATE()
+          AND p.fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 5 DAY) AND CURDATE()
         GROUP BY p.numerodepedido, p.comida, p.opciones, p.pagocon, p.fecha
         ORDER BY p.numerodepedido DESC;
     ";

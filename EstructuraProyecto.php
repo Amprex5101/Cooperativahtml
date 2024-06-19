@@ -39,8 +39,9 @@
 
     <div class="imagenes_menu">
         <?php
+            include 'conexion.php';
             try {
-                $conexion = new PDO('mysql:host=localhost:3307;dbname=cooperativa_bd', 'root', '');
+                $conexion = obtenerConexion();
                 $productos = array('Chavindeca', 'Hamburguesa', 'Quesadillas D', 'Quesadilla', 'Sandwich', 'Sincronizada', 'Torta', 'Torta Doble', 'Tacos Dorados', 'Morisqueta', 'Papas', 'Tacos');
                 $imagenes = array('img/chavindeca.jpeg', 'img/hamburguesa.jpg', 'img/quesadilla dorada.jpg', 'img/quesadilla.jpg', 'img/sandwich.jpg', 'img/sincronizada.jpg', 'img/tortadeshebrada.jpg', 'img/Tortadoble.jpg', 'img/TacosDorados.jpeg', 'img/Morisqueta.jpeg', 'img/papas.jpeg', 'img/Tacos.jpeg');
                 $i = 0;

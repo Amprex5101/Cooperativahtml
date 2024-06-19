@@ -6,12 +6,9 @@ $password = $_POST['password'] ?? '';
 $errores = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    include 'conexion.php';
     try {
-        $dsn = 'mysql:host=localhost:3307;dbname=cooperativa_bd';
-        $usuario = 'root';
-        $contrasena = '';
-        
-        $conexion = new PDO($dsn, $usuario, $contrasena);
+        $conexion = obtenerConexion();
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Consulta para obtener la contraseña y el nombre de usuario

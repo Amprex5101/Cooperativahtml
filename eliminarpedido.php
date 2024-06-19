@@ -17,9 +17,10 @@ if ($data) {
     $comida = $data['comida'];
     $opciones = $data['opciones'];
     $cantidad = $data['cantidad'];
-
+    
+    include 'conexion.php';
     try {
-        $conexion = new PDO('mysql:host=localhost:3307;dbname=cooperativa_bd', 'root', '');
+        $conexion = obtenerConexion();
         $consulta = "UPDATE pedidos p, login l 
                      SET p.cancelado=1 
                      WHERE p.pagado = 0 AND p.cancelado = 0 AND l.correo = :correo 
