@@ -7,9 +7,9 @@ $errores = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
-        $dsn = 'mysql:host=localhost:3308;dbname=cooperativa_bd';
+        $dsn = 'mysql:host=localhost:3307;dbname=cooperativa_bd';
         $usuario = 'root';
-        $contrasena = 'root';
+        $contrasena = '';
         
         $conexion = new PDO($dsn, $usuario, $contrasena);
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

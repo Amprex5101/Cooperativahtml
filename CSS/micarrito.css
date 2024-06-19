@@ -7,31 +7,37 @@
     --gris: #545454;
     --grisclaro: #DFE9F3;
 }
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
+
 body {
     background-color: #f2f0f0;
     margin: 0rem;
 }
+
 .menu-container {
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
 }
+
 .Compras {
     color: #000000;
     margin: 1rem 7rem 2rem;
     background-color: white;
     border-radius: 0.6rem;
 }
+
 .Compras h1 {
     font-size: 3.5rem;
     margin: 0px 0px 0px 3rem;
     padding: 20px 0px;
 }
+
 .imagenes {
     font-size: 2rem;
     display: flex;
@@ -43,41 +49,50 @@ body {
     border-top: 0.1rem;
     border-top-style: solid;
 }
+
 .imagenes h3 {
     font-size: 3rem;
     margin: 0rem;
 }
+
 .cantidad {
     display: flex;
     gap: 1rem;
     margin-top: 5.02rem;
 }
+
 .imagenes p {
     margin: 0rem;
     font-size: 2.2rem;
 }
+
 .datos {
     margin: 0 0 0 2vw;
 }
+
 .precio {
     text-align: center;
     justify-content: center;
 }
+
 .detalles {
     display: flex;
     justify-content: center;
 }
+
 .imagen {
     height: 100%;
 }
+
 .responsive-image {
-    height: 10rem;
+    height: 17rem;
     width: 30rem;
     max-width: 100%;
     max-height: 100%;
     min-width: 30rem;
     min-height: 10rem;
 }
+
 .total {
     border-color: #000000;
     border-top: 0.1rem;
@@ -87,15 +102,18 @@ body {
     padding: 1.6rem 8rem 1.6rem 4.8rem;
     gap: 1rem;
 }
+
 .total h2 {
     color: black;
     font-size: 2.2rem;
 }
+
 .boton {
     display: flex;
     justify-content: center;
     padding-bottom: 3rem;
 }
+
 .boton a {
     background-color: #F14612;
     font-size: 3rem;
@@ -108,24 +126,92 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.eliminar {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.eliminarCelu {
+    display: none;
+}
+
+.imagenes .detalles .datos .precio {
+    display: none;
+}
+
+.btn-eliminar {
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
+    background-color: #FF6347; /* Ejemplo de color */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
 @media (max-width: 1200px) and (min-width: 768px) {
     html {
         font-size: 50%;
     }
 }
+
 @media (max-width: 768px) {
-    html{
+    html {
         font-size: 40%;
     }
+
     .imagenes {
         display: flex;
-        justify-content:space-between;
+        justify-content: space-between;
         align-items: flex-end;
         padding: 1rem;
     }
+
     .detalles {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .imagenes .detalles img {
+        width: 100%;
+        height: auto;
+    }
+
+    .imagenes .detalles .datos .precio {
+        display: inline;
+    }
+
+    .imagenes .precio {
+        display: none;
+    }
+
+    .datos {
+        margin: 2rem 0rem 2rem 0rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        width: 100%; /* Para asegurarse de que ocupa todo el espacio disponible */
+    }
+
+    .cantidad {
+        margin-top: 0px;
+    }
+
+    /* Ajuste responsivo de tamaño de fuente */
+    .datos p, .datos h3 {
+        font-size: clamp(1.5rem, 2.5vw, 3.2rem);
+    }
+
+    .eliminar {
+        display: none;
+    }
+
+    .eliminarCelu {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
     }
 }

@@ -9,48 +9,51 @@ if (!isset($_SESSION['usuario'])) {
 
 $nombreUsuario = $_SESSION['nombre'] ?? '';
 $correo = $_SESSION['correo'] ?? '';
-
+// Establecer la zona horaria de Apatzingán, Michoacán, México
 try {
     $conexion = new PDO('mysql:host=localhost:3307;dbname=cooperativa_bd', 'root', '');
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Consulta para obtener los pedidos agrupados por fecha y número de pedido
+    // Consulta para obtener los pedidos distintos en orden descendente por fecha y número de pedido
     $consulta = "
-        SELECT p.pagocon, p.fecha, p.numerodepedido 
+        SELECT DISTINCT
+            p.pagocon,
+            p.fecha,
+            p.numerodepedido
         FROM pedidos p
         JOIN login l ON p.usuario = l.usuario
-        WHERE p.pagado = 1 
-          AND p.cancelado = 0 
-          AND l.correo = :correo 
-          AND p.usuario = :usuario 
-          AND p.fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 5 DAY) AND CURDATE()
-        GROUP BY p.numerodepedido, p.fecha
-        ORDER BY p.fecha DESC;
+        WHERE p.pagado = 1
+          AND p.cancelado = 0
+          AND l.correo = :correo
+          AND p.usuario = :usuario
+          AND p.fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 30 DAY) AND CURDATE()
+        ORDER BY p.fecha DESC, p.numerodepedido DESC;
     ";
 
     $stmt = $conexion->prepare($consulta);
     $stmt->bindParam(':correo', $correo);
     $stmt->bindParam(':usuario', $nombreUsuario);
     $stmt->execute();
-    $pedidosAgrupados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $pedidosDistintos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Redirigir si no hay pedidos agrupados
-    if (empty($pedidosAgrupados)) {
+    // Redirigir si no hay pedidos
+    if (empty($pedidosDistintos)) {
         header("Location: Web-sinpedidos.php");
         exit();
     }
 
-    // Consulta para obtener los detalles de cada pedido
+    // Consulta para obtener los detalles de cada pedido en orden descendente
     $consultaDetalles = "
         SELECT p.numerodepedido, p.comida, p.opciones, SUM(p.cantidad) cantidad, SUM(p.total) total, p.pagocon, p.fecha
         FROM pedidos p
         JOIN login l ON p.usuario = l.usuario
-        WHERE p.pagado = 1 
-          AND p.cancelado = 0 
-          AND l.correo = :correo 
-          AND p.usuario = :usuario 
-          AND p.fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 5 DAY) AND CURDATE()
-        GROUP BY p.numerodepedido, p.comida, p.opciones, p.pagocon, p.fecha;
+        WHERE p.pagado = 1
+          AND p.cancelado = 0
+          AND l.correo = :correo
+          AND p.usuario = :usuario
+          AND p.fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 30 DAY) AND CURDATE()
+        GROUP BY p.numerodepedido, p.comida, p.opciones, p.pagocon, p.fecha
+        ORDER BY p.numerodepedido DESC;
     ";
 
     $stmtDetalles = $conexion->prepare($consultaDetalles);
@@ -58,15 +61,6 @@ try {
     $stmtDetalles->bindParam(':usuario', $nombreUsuario);
     $stmtDetalles->execute();
     $detallesPedidos = $stmtDetalles->fetchAll(PDO::FETCH_ASSOC);
-
-    // Separar los pedidos por método de pago
-    $pedidosEfectivo = array_filter($pedidosAgrupados, function($pedido) {
-        return $pedido['pagocon'] == 'efectivo';
-    });
-
-    $pedidosTarjeta = array_filter($pedidosAgrupados, function($pedido) {
-        return $pedido['pagocon'] == 'tarjeta';
-    });
 
 } catch (PDOException $e) {
     echo 'Hubo un error inesperado: '.$e->getMessage();
@@ -96,28 +90,29 @@ try {
     </header>
     <?php
         $imagenes = array(
-            'Chavindeca' => 'img/chavindeca.jpg', 'Hamburguesa' => 'img/hamburguesa.jpg',
+            'Chavindeca' => 'img/chavindeca.jpeg', 'Hamburguesa' => 'img/hamburguesa.jpg',
             'Quesadillas D' => 'img/quesadilla dorada.jpg', 'Quesadilla' => 'img/quesadilla.jpg',
             'Sandwich' => 'img/sandwich.jpg', 'Sincronizada' => 'img/sincronizada.jpg',
-            'Torta' => 'img/tortadeshebrada.jpg', 'Torta Doble' => 'img/TortaDoble.jpeg',
+            'Torta' => 'img/tortadeshebrada.jpg', 'Torta Doble' => 'img/TortaDoble.jpg',
             'Tacos Dorados' => 'img/TacosDorados.jpeg', 'Morisqueta' => 'img/Morisqueta.jpeg',
             'Papas' => 'img/papas.jpeg', 'Tacos' => 'img/Tacos.jpeg'
         );
 
-        function renderPedidos($pedidos, $detalles, $imagenes, $tipoPago) {
+        function renderPedidos($pedidos, $detalles, $imagenes) {
             foreach ($pedidos as $pedido) {
                 $newDate = date("d/m/Y", strtotime($pedido['fecha']));
+                
                 echo '<section class="Pedidos">
                         <div class="Fecha">
                             <h1>'.$newDate.'</h1>
                             <div class="Metodo-Pago">
-                                <p>Pago con '.$tipoPago.'</p>
-                                <a href="'.($tipoPago == 'efectivo' ? 'QRefectivo.php' : 'QRtarjeta.php').'">Mostrar QR</a>
+                                <p>Pago con '.$pedido['pagocon'].'</p>
+                                <a href="'.($pedido['pagocon'] == 'efectivo' ? 'QRefectivo.php' : 'QRtarjeta.php').'">Mostrar QR</a>
                             </div>
                         </div>';
 
                 foreach ($detalles as $detalle) {
-                    if ($detalle['pagocon'] == $tipoPago && $detalle['fecha'] == $pedido['fecha'] && $detalle['numerodepedido'] == $pedido['numerodepedido']) {
+                    if ($detalle['numerodepedido'] == $pedido['numerodepedido'] && $detalle['fecha'] == $pedido['fecha']) {
                         $imagen = isset($imagenes[$detalle['comida']]) ? $imagenes[$detalle['comida']] : 'img/blanco.jpg';
                         echo '<div class="imagenes">
                                 <img src="'.$imagen.'" alt="">
@@ -135,11 +130,8 @@ try {
             }
         }
 
-        // Renderizar pedidos pagados con efectivo
-        renderPedidos($pedidosEfectivo, $detallesPedidos, $imagenes, 'efectivo');
-
-        // Renderizar pedidos pagados con tarjeta
-        renderPedidos($pedidosTarjeta, $detallesPedidos, $imagenes, 'tarjeta');
+        // Renderizar todos los pedidos
+        renderPedidos($pedidosDistintos, $detallesPedidos, $imagenes);
     ?>
 </body>
 </html>

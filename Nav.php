@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$nombreUsuario = $_SESSION['nombre'] ?? '';
+?>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="CSS/Navegacion.css">
 <body>
@@ -12,7 +23,7 @@
                 </div>
                 <div class="entrar">
                     <img src="img/imagen_2024-03-02_140324687-removebg-preview.png" alt="usuario">
-                    <p>Huevito</p>
+                    <p><?php echo $nombreUsuario?></p>
                     <a href="micarrito.php" class="Carrito">
                         <img src="img/carro-de-compras-rapido (1).png" alt="">
                     </a>

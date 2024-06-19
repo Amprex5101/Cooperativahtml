@@ -11,7 +11,7 @@
     <div id="menu-container" class="menu-container"></div>
     <div class="Compras">
         <h1>¿Cómo deseas pagar....?</h1>
-        <form method="post" action="">
+        <form id="payment-form">
             <div class="metodos_pagos">
                 <input type="radio" id="debito" name="pago" value="debito">
                 <div class="circulo">
@@ -32,16 +32,34 @@
         </form>
     </div>
 
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $metodo_pago = $_POST['pago'];
-        
-        if ($metodo_pago == 'debito') {
-            echo "<script>window.location.href = 'pagotarjeta.php';</script>";
-        } elseif ($metodo_pago == 'efectivo') {
-            echo "<script>window.location.href = 'QRefectivo.php';</script>";
-        }
-    }
-    ?>
+    <script>
+        document.getElementById('payment-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const metodoPago = document.querySelector('input[name="pago"]:checked').value;
+
+            const formData = new FormData();
+            formData.append('tipopago', metodoPago);
+
+            if (metodoPago === 'efectivo') {
+                fetch('pagohecho.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message === 'Pedido pagado correctamente') {
+                        window.location.href = 'QRefectivo.php';
+                    } else {
+                        alert('Error al procesar el pago: ' + data.message);
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            } else if (metodoPago === 'debito') {
+                window.location.href = 'pagotarjeta.php';
+            }
+        });
+    </script>
 </body>
 </html>

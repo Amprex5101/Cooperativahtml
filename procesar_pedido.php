@@ -11,7 +11,7 @@ if ($data) {
     $total = $data['total'];
 
     try {
-        $conexion = new PDO('mysql:host=localhost:3308;dbname=cooperativa_bd', 'root', 'root');
+        $conexion = new PDO('mysql:host=localhost:3307;dbname=cooperativa_bd', 'root', '');
         $consulta = "
             INSERT INTO pedidos (id, usuario, comida, opciones, cantidad, total)
             VALUES (NULL, :usuario, :comida, :opciones, :cantidad, :total)
