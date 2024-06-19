@@ -165,7 +165,7 @@ body{
     display: flex;
     justify-content: center;
     padding-bottom: 3rem;
-    a{
+    button{
         background-color:#F14612;
         font-size: 1.5rem;
         color: #000000;
@@ -184,7 +184,7 @@ body{
         display: flex;
         justify-content: center;
         padding-bottom: 3rem;
-        a{
+        button{
             background-color:#F14612;
             font-size: 2.5rem;
             color: #000000;
