@@ -19,7 +19,7 @@ $tipopago = $_POST['tipopago'] ?? '';
 if ($tipopago) {
     try {
         $conexion = new PDO('mysql:host=localhost:3307;dbname=cooperativa_bd', 'root', '');
-        $fecha = date('Y-m-d', strtotime('-1 day'));
+        $fecha = date('Y-m-d'); //, strtotime('-1 day')
         // Contar el número de pedidos
         $consulta2 = "SELECT COUNT(DISTINCT numerodepedido) AS num_pedidos FROM pedidos";
         $stmtconsulta2 = $conexion->prepare($consulta2);

@@ -1,22 +1,22 @@
-html{
+html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
 
-body{
+body {
     background-color: #f2f0f0;
     margin: 0px;
 }
 
-.menu-container{
+.menu-container {
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
 }
 
-@media (min-width: 768px){
-    .menu-container{
+@media (min-width: 768px) {
+    .menu-container {
         position: sticky;
         top: 0;
         left: 0;
@@ -24,7 +24,7 @@ body{
     }
 }
 
-.botones{
+.botones {
     a {
         padding-right: 2rem;
         color: white;
@@ -32,9 +32,7 @@ body{
     }
 }
 
-
-
-.pagos{
+.pagos {
     color: #000000;
     margin-inline-start: 7rem;
     margin-inline-end: 7rem;
@@ -44,13 +42,13 @@ body{
     border-radius: 0.6rem;
     align-items: center;
 
-    h1{
+    h1 {
         color: #505050;
         text-align: center;
         border-bottom: 0.1rem solid #000000;
     }
 
-    .datos{
+    .datos {
         font-size: 0.5rem;
         padding: 3rem;
         display: flex;
@@ -64,38 +62,38 @@ body{
             gap: 2rem;
         }
 
-            .let{
-                color: #505050;
-            }
+        .let {
+            color: #505050;
+        }
 
-            .letra{
-                color: #505050;
-            }  
+        .letra {
+            color: #505050;
+        }  
 
-            .imagenes{
+        .imagenes {
             display: grid;
             grid-template-columns: repeat(2,1fr);
             padding: 1rem 2rem;
             gap: 1rem;
     
-            img{
+            img {
                 height: 30rem;
                 width: 30rem;
                 margin: auto;
                 display: block;
             }
         }
-        }  
+    }  
 }
 
-
-@media (max-width: 768px){
-    p{
+@media (max-width: 768px) {
+    p {
         display: none;
     }
-    .tarj{
-            display: none;
-        }
+
+    .tarj {
+        display: none;
+    }
 
     .pagos .datos .codi {
         display: flex;
@@ -108,8 +106,8 @@ body{
     }
 }
 
-@media (min-width: 768px){
-    .pagos{
+@media (min-width: 768px) {
+    .pagos {
         color: #000000;
         margin-inline-start: 7rem;
         margin-inline-end: 7rem;
@@ -119,11 +117,11 @@ body{
         border-radius: 0.6rem;
         align-items: center;
 
-        h1{
+        h1 {
             display: none;
         }
-    
-        .datos{
+
+        .datos {
             font-size: 1.5rem;
             padding: 3rem;
             align-content: left;
@@ -132,69 +130,72 @@ body{
                 display: flex;
                 gap: 1rem;
     
-                .let{
+                .let {
                     color: #505050;
                 }
     
-                .letra{
+                .letra {
                     color: #505050;
                 }  
             }   
         }
-    
-        .imagenes{
+
+        .imagenes {
             display: grid;
             grid-template-columns: repeat(2,1fr);
             padding: 1rem 2rem;
             gap: 1rem;
     
-            img{
+            img {
                 height: 30rem;
                 width: 30rem;
                 margin: auto;
                 display: block;
             }
         }
-        
-        
     }
 }
 
-
-.boton{
+.boton {
     display: flex;
     justify-content: center;
     padding-bottom: 3rem;
-    a{
-        background-color:#F14612;
-        font-size: 1.5rem;
-        color: #000000;
-        text-decoration: none;
+}
+
+.boton button {
+    background-color: #F14612;
+    font-size: 1.5rem;
+    color: #ffffff;
+    height: 6rem;
+    width: 19rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 3rem;
+    }
+
+    .boton button {
+        background-color: #F14612;
+        font-size: 2.5rem;
+        color: #ffffff;
         height: 6rem;
-        width: 19rem;
+        width: 36rem;
         border-radius: 0.8rem;
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-}
-
-@media (min-width: 768px){
-    .boton{
-        display: flex;
-        justify-content: center;
-        padding-bottom: 3rem;
-        a{
-            background-color:#F14612;
-            font-size: 2.5rem;
-            color: #000000;
-            text-decoration: none;
-            height: 6rem;
-            width: 36rem;
-            border-radius: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
     }
 }
